@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Manga Website</title>
+    <style>
+        /* Basic CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #333;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #f5f5f5;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Header with Background Image */
+        header {
+            background-image: url('https://source.unsplash.com/random/1920x1080/?manga');
+            height: 40vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        /* Popular Manga Section */
+        .popular-manga {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .manga-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .manga-image {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 1rem;
+        }
+
+        /* Search Bar */
+        .search-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Focus States */
+        :focus {
+            outline: none;
+            box-shadow: 0 0 3px #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <h1>Accessible Manga Website</h1>
+            <ul>
+                <li><a href="#popular">Popular Manga</a></li>
+                <li><a href="#search">Search</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <h2>Discover New Manga Stories</h2>
+    </header>
+
+    <main>
+        <section class="popular-manga" id="popular">
+            <h2>Popular Manga</h2>
+            
+            <div class="manga-card">
+                <img src="https://source.unsplash.com/random/200x250/?manga1" alt="Manga 1 cover" class="manga-image">
+                <h3>The Great Manga</h3>
+                <p>A classic tale of adventure and magic.</p>
+                <button onclick="showDetails('manga1')">Read More</button>
+            </div>
+
+            <div class="manga-card">
+                <img src="https://source.unsplash.com/random/200x250/?manga2" alt="Manga 2 cover" class="manga-image">
+                <h3>The Legend of the Ninja</h3>
+                <p>A story of martial arts and intrigue.</p>
+                <button onclick="showDetails('manga2')">Read More</button>
+            </div>
+
+            <div class="manga-card">
+                <img src="https://source.unsplash.com/random/200x250/?manga3" alt="Manga 3 cover" class="manga-image">
+                <h3>Dragon Riders</h3>
+                <p>A fantasy adventure set in a magical world.</p>
+                <button onclick="showDetails('manga3')">Read More</button>
+            </div>
+        </section>
+
+        <section class="search-container" id="search">
+            <h2>Search Manga</h2>
+            <form onsubmit="searchManga(event)">
+                <input type="text" id="search-input" placeholder="Enter manga title..." required>
+                <button type="submit">Search</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Accessible Manga Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Basic JavaScript for interactivity
+        function showDetails(mangaId) {
+            alert(`Details for ${mangaId}`);
+        }
+
+        function searchManga(event) {
+            event.preventDefault();
+            const searchTerm = document.getElementById('search-input').value;
+            alert(`Searching for: ${searchTerm}`);
+        }
+    </script>
+</body>
+</html>
